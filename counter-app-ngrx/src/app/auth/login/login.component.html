@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4 mt-5 border p-5">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <h2 class="text-info border-bottom pb-3" style="font-weight:bold;">Login</h2>
+            <div class="mb-3 mt-5">
+                <input type="text" placeholder="Email" class="text-center form-control" formControlName="email">
+                <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched" class="text-danger mt-1" style="font-size:.7rem; font-weight:300;text-align: right;">
+                    <div *ngIf="loginForm.get('email').errors.required">Email is required.</div>
+                    <div *ngIf="loginForm.get('email').errors.email">Invalid email.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="password" placeholder="Password" class="text-center form-control" formControlName="password">
+                <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" class="text-danger mt-1" style="font-size:.7rem; font-weight:300;text-align: right;">
+                    <div *ngIf="loginForm.get('password').errors.required">Password is required.</div>
+                    <div *ngIf="loginForm.get('password').errors.minlength">Password must have atleast 8 characters.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success" style="padding-left:9.30rem; padding-right: 9.30rem;" [disabled]="loginForm.invalid">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

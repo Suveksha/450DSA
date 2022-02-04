@@ -1,0 +1,13 @@
+<div class="my-3">
+    <input type="text" placeholder="Add to Counter" style="padding-left:2%;" [(ngModel)]="value">&nbsp;
+    <button class="btn btn-info" style="color:white" (click)="onAdd()">Add to Counter</button>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<br> 
+<div class="my-3 text-warning"><h1>{{(personName$|async)}}</h1></div>
+<div class="my-3">
+    <button class="btn btn-primary" (click)="onChangeText()">Change the Name</button>
+</div>
